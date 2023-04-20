@@ -29,4 +29,10 @@ namespace Testing
         }
 
     }
+
+    public void UpdateProduct(Product product)
+    {
+         _conn.Execute("UPDATE products SET Name = @name, Price = @price WHERE ProductID = @id",
+     new {name = product.Name, price = product.Price, id = product.ProductID });
+    }
 }
