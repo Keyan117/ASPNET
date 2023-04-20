@@ -9,5 +9,6 @@ namespace Testing
     public interface IProductionRepository
     {
         public IEnumerable<Product> GetAllProducts();
+        public Product GetProduct(int id);
     }
 }
