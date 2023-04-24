@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Testing.Models;
+using System.Data;
 
 namespace Testing.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ProductRepository repo;
+        private readonly IProductRepository repo;
 
-        public ProductController(ProductRepository repo)
+        public ProductController(IProductRepository repo)
         {
             this.repo = repo;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var products = repo.GetAllProducts();
+
+            return View(products);
         }
 
         public IActionResult ViewProduct(int id)
