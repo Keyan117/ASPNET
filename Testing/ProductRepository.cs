@@ -16,12 +16,11 @@ namespace Testing
         {
             _conn = conn;
         }
-
-        public IEnumerable<Product> GetAllProduct()
+        public IEnumerable<Product> GetAllProducts()
         {
-            return _conn.Query<Product>("Select * From Products;");
+             return _conn.Query<Product>("Select * From Products;");
         }
-
+        
         public Product GetProduct(int id)
         {
             return _conn.QuerySingle<Product>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id",
@@ -52,9 +51,7 @@ namespace Testing
             return product;
         }
 
-
-
-
+       
     }
 
     
