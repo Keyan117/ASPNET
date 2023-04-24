@@ -8,7 +8,7 @@ using Testing.Models;
 
 namespace Testing
 {
-    public class ProductRepository 
+    public class ProductRepository : IProductionRepository
     {
         private readonly IDbConnection _conn;
 
